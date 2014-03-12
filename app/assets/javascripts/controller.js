@@ -4,11 +4,23 @@
 jQuery(function($){
 	Model.load("page1");
 	Model.load("page2");
-	$('body').delegate('page1', 'click', function(e){ 
-		var page = Model.find("Page1");
+	$('body').delegate("#news", 'click', function(e){
+		var	page = Model.find("page1");
+		console.log(page);
 		
+		var element = $("#dataTemplate").tmpl(page);
+		console.log(element);
+		$("#data").empty();
+		element.appendTo($("#data"));
 	});
-	$('body').delegate('page2', 'click', function(e){
-		var page = Model.find("Page2");
+	$('body').delegate("#about", 'click', function(e){
+		var	page = Model.find("page2");
+		console.log(page);
+		
+		var element = $("#dataTemplate").tmpl(page);
+		console.log(element);
+		$("#data").empty();
+		element.appendTo($("#data"));
 	});
+	$("#news").trigger('click');
 });

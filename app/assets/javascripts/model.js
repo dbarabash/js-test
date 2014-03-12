@@ -6,10 +6,13 @@ var Model = {
 	pages: { "page1": null, "page2": null },
 	
 	find: function(page) {
+		console.log("this = " + this);
+		console.log("page = " + page);
+		console.log("this.pages[page] = " + this.pages[page]);
 		if (!this.pages[page]) {
 			this.load(page);
 		}
-		return this[page];
+		return this.pages[page];
 	},
 	
 	load: function(page) {

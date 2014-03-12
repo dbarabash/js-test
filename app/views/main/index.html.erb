@@ -1,13 +1,22 @@
 <script type="text/x-jquery-tmpl" id="dataTemplate">
-	{{each messages}}
-		<p>{$value}</p>
+	{{if header}}
+		<h3 class="header">${header}</h3>
+	{{/if}}
+	{{if image}}
+		<%= link_to image_tag('${image}'), :class => "leftimg" %>
+	{{/if}}
+	{{each text}}
+		<p>${$value}</p>
 	{{/each}}
 </script>
-<h1>Main</h1>
-<div>
-	<button>News</button>
-	<button>About</button>
-</div>
-<div id="data">
-	
+<br>
+<div id="main">
+	<h1>Main</h1>
+	<div>
+		<button id="news">News</button>
+		<button id="about">About</button>
+	</div>
+	<div id="data">
+		
+	</div>
 </div>
