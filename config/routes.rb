@@ -1,4 +1,10 @@
 JsTest::Application.routes.draw do
+  get "bb_test/index"
+
+  get "bb_test/news"
+
+  get "bb_test/about"
+
 #  get "main/index"
 
   match "page1" => "main#page1"
